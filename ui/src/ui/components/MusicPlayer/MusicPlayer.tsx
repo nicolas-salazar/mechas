@@ -1,71 +1,36 @@
-import { useCallback, useEffect, useState } from 'react';
 import { FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../store';
+import { playAudio, toggleAudio } from '../../../store/musicPlayerSlice';
 import {
   AuthorLabel,
   Container,
   SongMetadataContainer,
   SongNameLabel,
 } from './MusicPlayer.styles';
-import getRandomItem from 'random-item';
-
-let audio: HTMLAudioElement;
-
-type Song = {
-  author: string;
-  name: string;
-  path: string;
-};
-
-const SONGS_LIST = [
-  {
-    name: 'Sleepless',
-    author: 'Stuffed Tomato',
-    path: '/music/Sleepless.mp3',
-  },
-  {
-    name: 'Memoriae',
-    author: 'Stuffed Tomato',
-    path: '/music/Memoriae.mp3',
-  },
-  {
-    name: 'Spatium',
-    author: 'Stuffed Tomato',
-    path: '/music/Spatium.mp3',
-  },
-];
 
 const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentSong] = useState<Song>(getRandomItem(SONGS_LIST));
+  const dispatch = useDispatch();
+  const isPlaying = useSelector((state: RootState) => state.music.isPlaying);
+  const currentSong = useSelector(
+    (state: RootState) => state.music.currentSong,
+  );
 
-  const playAudio = useCallback(() => {
-    audio.play();
-    setIsPlaying(true);
-  }, []);
-
-  const stopAudio = useCallback(() => {
-    audio.pause();
-    setIsPlaying(false);
-  }, []);
-
-  const toggleAudio = useCallback(() => {
-    if (isPlaying) {
-      stopAudio();
-      return;
-    }
-
-    playAudio();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPlaying]);
-
-  useEffect(() => {
-    audio = new Audio(currentSong.path);
-    playAudio();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  if (!currentSong) {
+    return null;
+  }
 
   return (
-    <Container onClick={toggleAudio}>
+    <Container
+      onClick={() => {
+        if (isPlaying === null) {
+          dispatch(playAudio());
+          return;
+        }
+
+        dispatch(toggleAudio());
+      }}
+    >
       {isPlaying ? <FaVolumeUp size={12} /> : <FaVolumeMute size={12} />}
       <SongMetadataContainer>
         <SongNameLabel>{currentSong.name}</SongNameLabel>
