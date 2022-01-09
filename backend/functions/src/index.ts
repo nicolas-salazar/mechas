@@ -8,4 +8,4 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-exports.deleteMocks = createAphorism;
+exports.createAphorism = createAphorism;
