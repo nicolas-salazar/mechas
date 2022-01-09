@@ -2,10 +2,11 @@
 /* eslint-disable import/first */
 import * as admin from 'firebase-admin';
 import serviceAccount from './firebase/serviceAccount/serviceAccount';
-import { createAphorism } from './functions';
+import { createAphorism, getAphorism } from './functions';
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
 exports.createAphorism = createAphorism;
+exports.getAphorism = getAphorism;
