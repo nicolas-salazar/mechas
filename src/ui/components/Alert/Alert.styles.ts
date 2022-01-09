@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   height: 100%;
   justify-content: center;
+  position: relative;
   width: 100%;
 `;
 
@@ -26,6 +27,15 @@ export const Subtitle = styled.h6`
   color: ${({ theme }) => theme.palette.colors.white};
   margin-top: 48px;
   opacity: 0.5;
+  text-align: center;
+  width: 100%;
+`;
+
+export const HelpLabel = styled.p`
+  bottom: 20vh;
+  color: ${({ theme }) => theme.palette.colors.secondary};
+  font-size: 0.7em;
+  position: absolute;
   text-align: center;
   width: 100%;
 `;
