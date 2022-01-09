@@ -1,4 +1,4 @@
-import { Alert } from '../../components';
+import { Aphorism as AphorismRenderer } from '../../components';
 import { HOME_ROUTE } from '../routes';
 import { useHistory } from 'react-router-dom';
 import MainLayout from '../../layout';
@@ -10,8 +10,8 @@ const Aphorism = () => {
 
   return (
     <MainLayout>
-      <Alert
-        helpLabel="Haz click en cualquier parte"
+      <AphorismRenderer
+        helpLabel="Ponte tus audífonos y haz click en cualquier parte"
         onClick={() => history.push(HOME_ROUTE.path)}
         subtitle={author}
         title={message}

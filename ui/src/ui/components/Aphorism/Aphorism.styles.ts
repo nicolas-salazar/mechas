@@ -30,7 +30,7 @@ export const Subtitle = styled.h3`
   width: 100%;
 `;
 
-export const HelpLabelContainer = styled.p`
+export const HelpLabelContainer = styled.div`
   bottom: 20vh;
   position: absolute;
   text-align: center;

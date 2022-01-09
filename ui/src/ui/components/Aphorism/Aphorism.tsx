@@ -5,16 +5,16 @@ import {
   Subtitle,
   Title,
   Wrapper,
-} from './Alert.styles';
+} from './Aphorism.styles';
 
-interface AlertProps {
+interface AphorismProps {
   helpLabel?: string;
   onClick: () => void;
   subtitle: string;
   title: string;
 }
 
-const Alert = ({ helpLabel, onClick, subtitle, title }: AlertProps) => {
+const Aphorism = ({ helpLabel, onClick, subtitle, title }: AphorismProps) => {
   return (
     <Wrapper onClick={onClick}>
       <Container className="animate__animated animate__fadeInDown animate__slow">
@@ -33,4 +33,4 @@ const Alert = ({ helpLabel, onClick, subtitle, title }: AlertProps) => {
   );
 };
 
-export default Alert;
+export default Aphorism;
