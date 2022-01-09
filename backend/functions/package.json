@@ -9,10 +9,8 @@
     "start": "npm run shell",
     "logs": "firebase functions:log",
     "lint": "eslint --ext .ts src",
-    "deploy:dev": "firebase use develop && firebase deploy --only functions",
-    "deploy:prod": "firebase use production && firebase deploy --only functions",
-    "start:dev": "firebase use develop && npm run build && firebase emulators:start --only functions",
-    "start:prod": "firebase use production && npm run build && firebase emulators:start --only functions"
+    "deploy:dev": "firebase deploy --only functions",
+    "start:dev": "npm run build && firebase emulators:start --only functions"
   },
   "eslintConfig": {
     "extends": "react-app"
