@@ -9,7 +9,9 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+  className: 'animate__animated animate__fadeInDown animate__slow',
+})`
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -30,14 +32,18 @@ export const Subtitle = styled.h3`
   width: 100%;
 `;
 
-export const HelpLabelContainer = styled.div`
+export const HelpLabelContainer = styled.div.attrs({
+  className: 'animate__animated animate__fadeIn animate__delay-2s',
+})`
   bottom: 20vh;
   position: absolute;
   text-align: center;
   width: 100%;
 `;
 
-export const HelpLabel = styled.p`
+export const HelpLabel = styled.p.attrs({
+  className: 'animate__animated animate__pulse animate__slow animate__infinite',
+})`
   color: ${({ theme }) => theme.palette.colors.secondary};
   font-size: 1em;
   text-align: center;

@@ -17,16 +17,14 @@ interface AphorismProps {
 const Aphorism = ({ helpLabel, onClick, subtitle, title }: AphorismProps) => {
   return (
     <Wrapper onClick={onClick}>
-      <Container className="animate__animated animate__fadeInDown animate__slow">
+      <Container>
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
       </Container>
 
       {helpLabel && (
-        <HelpLabelContainer className="animate__animated animate__fadeIn animate__delay-2s">
-          <HelpLabel className="animate__animated animate__pulse animate__slow animate__infinite">
-            {helpLabel}
-          </HelpLabel>
+        <HelpLabelContainer>
+          <HelpLabel>{helpLabel}</HelpLabel>
         </HelpLabelContainer>
       )}
     </Wrapper>

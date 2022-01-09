@@ -7,7 +7,7 @@ const Home = () => {
     <MainLayout>
       <MechasBackground>Hey there :)</MechasBackground>
 
-      <FooterContainer className="animate__animated animate__fadeIn animate__slow">
+      <FooterContainer>
         <MusicPlayer />
         <MadeWithLove />
       </FooterContainer>
