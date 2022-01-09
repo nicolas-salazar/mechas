@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes move-asset-back {
   from {
     background-position: 0 0;

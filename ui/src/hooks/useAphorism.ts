@@ -1,32 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { collection, getDocs, limit, query } from 'firebase/firestore';
-import { firestoreDb } from '../firebase.config';
+import { Aphorism } from '../types/aphorism';
+import { firebaseFunctions } from '../firebase.config';
+import { httpsCallable } from 'firebase/functions';
 import { useEffect, useState } from 'react';
-import randomItem from 'random-item';
 
-const QUERY_LIMIT = 1;
-
-interface Aphorism {
-  author: string;
-  message: string;
-}
+const FIREBASE_FUNCTION_GET_APHORISM_NAME = 'getAphorism';
 
 const useAphorism = () => {
-  const aphorismsRef = collection(firestoreDb, 'aphorisms');
   const [aphorism, setAphorism] = useState<Aphorism | null>(null);
 
   useEffect(() => {
     const fetchAphorism = async () => {
-      const queryRef = query(aphorismsRef, limit(QUERY_LIMIT));
-      const querySnapshot = await getDocs(queryRef);
+      const getAphorismFromFirebase = httpsCallable(
+        firebaseFunctions,
+        FIREBASE_FUNCTION_GET_APHORISM_NAME,
+      );
+      const response = await getAphorismFromFirebase();
+      const { author, message } = response.data as Aphorism;
 
-      const availableAphorisms: Aphorism[] = [];
-      querySnapshot.forEach((doc) => {
-        const serializedItem = doc.data() as Aphorism;
-        availableAphorisms.push(serializedItem);
-      });
-
-      setAphorism(randomItem(availableAphorisms));
+      setAphorism({ author, message });
     };
 
     fetchAphorism();

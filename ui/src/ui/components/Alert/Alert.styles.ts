@@ -24,18 +24,22 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h3`
-  color: ${({ theme }) => theme.palette.colors.white};
-  margin-top: 48px;
-  opacity: 0.5;
+  color: ${({ theme }) => theme.palette.colors.link};
+  margin-top: 16px;
+  text-align: center;
+  width: 100%;
+`;
+
+export const HelpLabelContainer = styled.p`
+  bottom: 20vh;
+  position: absolute;
   text-align: center;
   width: 100%;
 `;
 
 export const HelpLabel = styled.p`
-  bottom: 20vh;
   color: ${({ theme }) => theme.palette.colors.secondary};
   font-size: 1em;
-  position: absolute;
   text-align: center;
   width: 100%;
 `;

@@ -1,4 +1,11 @@
-import { Container, HelpLabel, Subtitle, Title, Wrapper } from './Alert.styles';
+import {
+  Container,
+  HelpLabel,
+  HelpLabelContainer,
+  Subtitle,
+  Title,
+  Wrapper,
+} from './Alert.styles';
 
 interface AlertProps {
   helpLabel?: string;
@@ -16,9 +23,11 @@ const Alert = ({ helpLabel, onClick, subtitle, title }: AlertProps) => {
       </Container>
 
       {helpLabel && (
-        <HelpLabel className="animate__animated animate__fadeIn animate__delay-2s">
-          {helpLabel}
-        </HelpLabel>
+        <HelpLabelContainer className="animate__animated animate__fadeIn animate__delay-2s">
+          <HelpLabel className="animate__animated animate__pulse animate__slow animate__infinite">
+            {helpLabel}
+          </HelpLabel>
+        </HelpLabelContainer>
       )}
     </Wrapper>
   );
