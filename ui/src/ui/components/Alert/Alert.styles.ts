@@ -17,13 +17,13 @@ export const Container = styled.div`
   width: 360px;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h1`
   color: ${({ theme }) => theme.palette.colors.primary};
   text-align: center;
   width: 100%;
 `;
 
-export const Subtitle = styled.h6`
+export const Subtitle = styled.h3`
   color: ${({ theme }) => theme.palette.colors.white};
   margin-top: 48px;
   opacity: 0.5;
@@ -34,7 +34,7 @@ export const Subtitle = styled.h6`
 export const HelpLabel = styled.p`
   bottom: 20vh;
   color: ${({ theme }) => theme.palette.colors.secondary};
-  font-size: 0.7em;
+  font-size: 1em;
   position: absolute;
   text-align: center;
   width: 100%;
