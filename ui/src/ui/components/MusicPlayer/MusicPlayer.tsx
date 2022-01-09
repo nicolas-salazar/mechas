@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
-import { Container } from './MusicPlayer.styles';
+import {
+  AuthorLabel,
+  Container,
+  SongMetadataContainer,
+  SongNameLabel,
+} from './MusicPlayer.styles';
 import getRandomItem from 'random-item';
 
 let audio: HTMLAudioElement;
@@ -62,7 +67,10 @@ const MusicPlayer = () => {
   return (
     <Container onClick={toggleAudio}>
       {isPlaying ? <FaVolumeUp size={12} /> : <FaVolumeMute size={12} />}
-      {`${currentSong.name} by ${currentSong.author}`}
+      <SongMetadataContainer>
+        <SongNameLabel>{currentSong.name}</SongNameLabel>
+        <AuthorLabel>{`by ${currentSong.author}`}</AuthorLabel>
+      </SongMetadataContainer>
     </Container>
   );
 };

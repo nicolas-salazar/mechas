@@ -1,5 +1,5 @@
 import { FooterContainer } from './Home.styles';
-import { MechasBackground, MusicPlayer } from '../../components';
+import { MadeWithLove, MechasBackground, MusicPlayer } from '../../components';
 import MainLayout from '../../layout';
 
 const Home = () => {
@@ -9,6 +9,7 @@ const Home = () => {
 
       <FooterContainer>
         <MusicPlayer />
+        <MadeWithLove />
       </FooterContainer>
     </MainLayout>
   );
