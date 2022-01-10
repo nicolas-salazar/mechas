@@ -3,7 +3,7 @@ import useDedications from '../../../../hooks/useDedications';
 import { Dedication } from '../../../components';
 import { Container } from './DedicationsCarousel.styles';
 
-const CAROUSEL_INTERVAL = 10000;
+const CAROUSEL_INTERVAL = 15000;
 
 const DedicationsCarousel = () => {
   const { dedications } = useDedications();

@@ -11,21 +11,19 @@ const Aphorism = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  if (author === null || message === null) {
-    return null;
-  }
-
   return (
     <MainLayout>
-      <AphorismRenderer
-        helpLabel="Ponte tus audífonos y toca cualquier parte"
-        onClick={() => {
-          dispatch(playAudio());
-          history.push(HOME_ROUTE.path);
-        }}
-        subtitle={author || ''}
-        title={message || ''}
-      />
+      {author && message && (
+        <AphorismRenderer
+          helpLabel="Ponte tus audífonos y toca cualquier parte"
+          onClick={() => {
+            dispatch(playAudio());
+            history.push(HOME_ROUTE.path);
+          }}
+          subtitle={author}
+          title={message}
+        />
+      )}
     </MainLayout>
   );
 };
