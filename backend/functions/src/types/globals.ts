@@ -1,4 +1,4 @@
 export interface IGlobalCounters {
   aphorismsCounter: number;
-  messagesCounter: number;
+  dedicationsCounter: number;
 }
