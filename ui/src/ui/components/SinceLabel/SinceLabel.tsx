@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import updateLocale from 'dayjs/plugin/updateLocale';
-import { AgoAccent, MainLabel } from './SinceLabel.styles';
+import { AgoAccent, ForeverAccent, MainLabel } from './SinceLabel.styles';
 
 dayjs.extend(relativeTime);
 dayjs.extend(updateLocale);
@@ -30,7 +30,8 @@ const MECHITAS_PASS_AWAY_DATE = new Date(MECHITAS_PASS_AWAY_DATE_STRING);
 const SinceLabel = () => (
   <MainLabel>
     Ya son <AgoAccent>{dayjs(MECHITAS_PASS_AWAY_DATE).fromNow()}</AgoAccent>{' '}
-    desde que ella te espera allá donde terminan las estrellas
+    desde que ella te espera allá donde terminan las estrellas. Y lo hará{' '}
+    <ForeverAccent>por siempre</ForeverAccent>.
   </MainLabel>
 );
 

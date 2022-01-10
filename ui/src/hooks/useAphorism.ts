@@ -25,8 +25,8 @@ const useAphorism = () => {
   }, []);
 
   return {
-    author: aphorism?.author || '',
-    message: aphorism?.message || '',
+    author: aphorism?.author,
+    message: aphorism?.message,
   };
 };
 

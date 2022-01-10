@@ -9,11 +9,6 @@
   display: none;
 }
 
-@font-face {
-  font-family: Amatic SC;
-  src: url('./assets/AmaticSC-Regular.ttf');
-}
-
 @keyframes move-asset-back {
   from {
     background-position: 0 0;
@@ -72,7 +67,7 @@
   background: transparent
     url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
     center;
-  z-index: 0;
+  z-index: -1;
 
   -moz-animation: move-asset-back 1000s linear infinite;
   -ms-animation: move-asset-back 1000s linear infinite;

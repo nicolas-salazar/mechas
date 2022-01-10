@@ -9,6 +9,11 @@
   display: none;
 }
 
+@font-face {
+  font-family: Amatic SC;
+  src: url('./assets/AmaticSC-Regular.ttf');
+}
+
 @keyframes move-asset-back {
   from {
     background-position: 0 0;

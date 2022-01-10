@@ -5,7 +5,7 @@ export const BodyContainer = styled.div.attrs({
 })`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   padding: 16px;
 `;
 

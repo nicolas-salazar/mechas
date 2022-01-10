@@ -42,7 +42,7 @@ export const HelpLabelContainer = styled.div.attrs({
 `;
 
 export const HelpLabel = styled.p.attrs({
-  className: 'animate__animated animate__pulse animate__slow animate__infinite',
+  className: 'animate__animated animate__pulse animate__slow',
 })`
   color: ${({ theme }) => theme.palette.colors.secondary};
   font-size: 1em;

@@ -1,11 +1,12 @@
 import { BodyContainer, FooterContainer } from './Home.styles';
+import MainLayout from '../../layout';
 import {
   MadeWithLove,
   MechasBackground,
   MusicPlayer,
   SinceLabel,
 } from '../../components';
-import MainLayout from '../../layout';
+import DedicationsCarousel from './DedicationsCarousel';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <MechasBackground>
         <BodyContainer>
           <SinceLabel />
+          <DedicationsCarousel />
         </BodyContainer>
       </MechasBackground>
 

@@ -18,7 +18,7 @@ const Aphorism = ({ helpLabel, onClick, subtitle, title }: AphorismProps) => {
   return (
     <Wrapper onClick={onClick}>
       <Container>
-        <Title>{title}</Title>
+        <Title>{`"${title}"`}</Title>
         <Subtitle>{subtitle}</Subtitle>
       </Container>
 
